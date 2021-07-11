@@ -1,0 +1,33 @@
+tc= int(input("TC numaranızı giriniz:"))
+password= int(input("şifrenizi giriniz:"))
+hesap= { tc:1111, 
+        password: 1111, 
+        "adı":  "Emre Altun", 
+        "Bakiye":3000, 
+        "Ek hesap": 2000
+       }
+     
+if (tc==hesap[tc]) and (password==hesap[password]):
+    print("Merhaba",hesap["adı"])
+    paracek= int(input("çekmek istediğiniz miktarı girin:"))
+    
+    if paracek<= hesap["Bakiye"]:
+        kalan= hesap["Bakiye"]-paracek
+        print("para çekiminiz tamamlandı. Kalan bakiyeniz:",kalan)
+    
+    else:
+        ekcevap= input("Bakiyeniz yeterli değil. Ek hesap kullanılsın mı (E/H)")
+        
+        if ekcevap=="E":
+            toplam= (hesap["Bakiye"]+hesap["Ek hesap"])
+            if paracek<= toplam:
+                kalanek= (hesap["Bakiye"]+hesap["Ek hesap"])-paracek
+                print("para çekiminiz tamamlandı. Kalan Ek hesap miktarı:",kalanek)
+            else:
+                print("Ek hesabınız yetersiz olduğu için işleminiz gerçekleşemedi.")
+            
+        else:
+            print("yine bekleriz.")
+           
+else:
+    print("kimlik veya şifre hatalı")
